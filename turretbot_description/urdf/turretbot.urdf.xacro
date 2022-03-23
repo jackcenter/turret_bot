@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="turret_robot">
+<xacro:arg name="prefix" default="" />
+
+  <!-- Import Turret Bot macro -->
+  <xacro:include filename="$(find turretbot_description)/urdf/turretbot_description.urdf.xacro" />
+
+  <!-- Import Turret Bot ros2_control description -->
+  <xacro:include filename="$(find turretbot_description)/ros2_control/turretbot_actuators.ros2_control.xacro" />
+
+  <!-- Used for fixing robot -->
+  <link name="world"/>
+
+  <xacro:turretbot parent="world" prefix="$(arg prefix)">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:turretbot>
+
+  <xacro:turretbot_actuator name="Turret_Bot" prefix="$(arg prefix)" />
+
+</robot>

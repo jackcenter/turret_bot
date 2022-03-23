@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="turretbot_actuator" params="name prefix use_sim:=^|false slowdown:=10.0">
+
+    <ros2_control name="TurretBotActuator1" type="actuator">
+      <hardware>
+        <plugin>turretbot_simulated_hardware/TurretBotActuator</plugin>
+        <param name="example_param_hw_start_duration_sec">2.0</param>
+        <param name="example_param_hw_stop_duration_sec">3.0</param>
+        <param name="example_param_hw_slowdown">${slowdown}</param>
+      </hardware>
+
+      <joint name="${prefix}base_to_platform_joint">
+        <command_interface name="position">
+          <param name="min">-3.14</param>
+          <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+      </joint>
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>
