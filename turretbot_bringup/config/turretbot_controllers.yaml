@@ -7,7 +7,7 @@ controller_manager:
 
     forward_position_controller:
       type: forward_command_controller/ForwardCommandController
-  
+
 forward_position_controller:
   ros__parameters:
     joints:

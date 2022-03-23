@@ -1,4 +1,4 @@
-# Setting up a Simple Actuator with ros2_control 
+# Setting up a Simple Actuator with ros2_control
 
 ## Introduction
 Focus is getting config files and launch files set up
@@ -14,12 +14,12 @@ Assume the name of your ros2_control workspace is $ROS2_CONTROL_WS
 
 ```
 cd $ROS2_CONTROL_WS/src
-mkdir turretbot 
+mkdir turretbot
 ```
 
 ### Part II: creating the robot description files
 
-First, we will create the package resposible for holding our robot's description: turretbot_description. 
+First, we will create the package resposible for holding our robot's description: turretbot_description.
 
 ```bash
 cd $ROS2_CONTROL_WS/src/turretbot
